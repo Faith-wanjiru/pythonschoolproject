@@ -2,7 +2,8 @@ from rest_framework import serializers
 from student.models import Student
 from teacher.models import Teacher
 from course.models import Course
-from classroom.models import ClassPeriod
+from classperiod.models import ClassPeriod
+from classroom.models import ClassRoom
 
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,8 +20,11 @@ class  CourseSerializer(serializers.ModelSerializer):
         model=Course
         fields="__all__"     
 
-class ClassperiodSerializer(serializers.ModelSerializer):
+class ClassPeriodSerializer(serializers.ModelSerializer):
      class Meta:
          model=ClassPeriod
          fields="__all__"
-
+class ClassRoomSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ClassRoom
+        fields="_all_"

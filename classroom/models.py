@@ -1,23 +1,19 @@
 from django.db import models
 
-# from django.db import Classroom
-# from classroom.models import Classroom
-# from course.models import Course
 
-
-class ClassPeriod(models.Model):
-      class_id=models.AutoField(primary_key=True)
-      class_name=models.CharField(max_length=30)
-      class_start_time = models.TimeField()
-      class_end_date= models.TimeField()
-      class_Course = models.ForeignKey('Course', on_delete=models.SET_NULL, null=True, related_name='student_class')
-      class_Classroom = models.ForeignKey('classroom', on_delete=models.SET_NULL, null=True, related_name='course')
-      class_dayofweek = models.CharField(max_length=30)
-      class_created_at=models.DateField()
-      class_updated_at=models.DateField()
+class ClassRoom(models.Model):
+    class_name = models.CharField(max_length=20)
+    class_id = models.PositiveSmallIntegerField()
+    class_course = models.CharField(max_length=20)
+    class_trainer = models.CharField(max_length=20)
+    class_days= models.PositiveSmallIntegerField()
+    academic_year=models.CharField(max_length=20)
+    class_capacity= models.PositiveSmallIntegerField()
+    class_enrollment = models.PositiveBigIntegerField()
+    room_number=models.PositiveSmallIntegerField()
+    class_windows = models.PositiveSmallIntegerField()
 def __str__(self):
-        return self.name
-
+    return f"{self.class_name} {self.class_id}"
 # Create your models here.
 
 
