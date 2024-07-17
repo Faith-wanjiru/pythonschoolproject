@@ -1,7 +1,13 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from student.models import Student
+from teacher.models import Teacher
+from course.models import Course
+from classroom.models import ClassPeriod
 from .serializers import StudentSerializer
+from .serializers import CourseSerializer
+from .serializers import TeacherSerializer
+from .serializers import ClassperiodSerializer
 
 
 class StudentListView(APIView):
@@ -13,7 +19,7 @@ class StudentListView(APIView):
 
 class CourseListView(APIView):
     def get(self,request):
-        course=Courses.objects.all()
+        course=Course.objects.all()
         serializer=CourseSerializer(course, many=True)
         return Response(serializer.data)
     
@@ -21,15 +27,15 @@ class CourseListView(APIView):
 class TeacherListView(APIView):
     def get(self,request):
         teacher=Teacher.objects.all()
-        serializer=StudentSerializer(teacher, many=True)
+        serializer=TeacherSerializer(teacher, many=True)
         return Response(serializer.data)
 
 
 
 class ClassPeriodListView(APIView):
     def get(self,request):
-        classperiod=ClassPeriodListView.objects.all()
-        serializer=ClassPeriodSerializer(Class_Period, many=True)
+        classperiod=ClassPeriod.objects.all()
+        serializer=ClassPeriodSerializer(classperiod, many=True)
         return Response(serializer.data)
 
 # class StudentListView(APIView):
