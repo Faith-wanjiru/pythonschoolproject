@@ -10,6 +10,8 @@ urlpatterns = [
     path("Courses/", CourseListView.as_view(), name="course_list_view"),
     path("Classperiod/", ClassPeriodListView.as_view(), name="classperiod_list_view"),
     # path("class_period", Class_PeriodListViews.as.view(),="class_period_list_view")
+    path ("students/<int:id>/",StudentDetailView.as_view(), name="student_detail_view")
+    
 
 ]
    
