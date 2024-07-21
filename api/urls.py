@@ -12,6 +12,16 @@ urlpatterns = [
     # path("class_period", Class_PeriodListViews.as.view(),="class_period_list_view")
     path ("students/<int:id>/",StudentDetailView.as_view(), name="student_detail_view")
     
+    path ("teacher/<int:id>/",TeacherDetailView.as_view(), name="teacher_detail_view")
+
+    path ("classperiod/<int:id>/",ClassPeriodDetailView.as_view(), name="classperiod_detail_view")
+
+    path ("course/<int:id>/",CourseDetailView.as_view(), name="student_detail_view")
+
+    path ("classroom/<int:id>/",ClassRoomDetailView.as_view(), name="student_detail_view")
+
+
+    
 
 ]
    
